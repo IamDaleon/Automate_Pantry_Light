@@ -6,13 +6,16 @@
   www.github.com/iamDaleon
 */
 
-
 #include <Adafruit_NeoPixel.h>
-#include <avr/power.h> // Required for 16 MHz Adafruit Trinket
+#ifdef __AVR__
+ #include <avr/power.h> // Required for 16 MHz Adafruit Trinket
+#endif
 
  /* Definers */
  // NeoPixels
-#define STRIP1 = 11, STRIP2 = 12, NUMPIXELS= 60 // Strip light & NeoPixels defined
+#define STRIP1 11 
+#define STRIP2 12
+#define NUMPIXELS 60 // Strip light & NeoPixels defined
 
 // Ultrasonic Sensor HC-SR04
 const int trigPin = 2, echoPin = 4;
@@ -30,25 +33,33 @@ void setup() {
   pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
   pinMode(echoPin, INPUT); // Sets the echoPin as an Input
   Serial.begin(9600); // Starts the serial communication
+
+   // These lines are specifically to support the Adafruit Trinket 5V 16 MHz.
+  // Any other board, you can remove this part (but no harm leaving it):
+#if defined(__AVR_ATtiny85__) && (F_CPU == 16000000)
+  clock_prescale_set(clock_div_1);
+#endif
+  // END of Trinket-specific code.
+
   pixels1.begin(); // INITIALIZE NeoPixel strip object (REQUIRED)
   pixels2.begin(); // INITIALIZE NeoPixel strip object (REQUIRED)
-  // Clears the trigPin
-  digitalWrite(trigPin, LOW);
-  delayMicroseconds(2);
-  // Sets the trigPin on HIGH state for 10 micro seconds
-  digitalWrite(trigPin, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(trigPin, LOW);
-  // Reads the echoPin, returns the sound wave travel time in microseconds
-  duration = pulseIn(echoPin, HIGH);
-  // Calculating the distance
-  distance = duration * 0.034 / 2;
-  // Prints the distance on the Serial Monitor
-  Serial.print("Distance: ");
-  Serial.println(distance);
 }
 
 void loop(){
+        // Clears the trigPin
+            digitalWrite(trigPin, LOW);
+            delayMicroseconds(2);
+        // Sets the trigPin on HIGH state for 10 micro seconds
+            digitalWrite(trigPin, HIGH);
+            delayMicroseconds(10);
+            digitalWrite(trigPin, LOW);
+        // Reads the echoPin, returns the sound wave travel time in microseconds
+            duration = pulseIn(echoPin, HIGH);
+        // Calculating the distance
+            distance = duration * 0.034 / 2;
+        // Prints the distance on the Serial Monitor
+            Serial.print("Distance: ");
+            Serial.println(distance);
 
     while (distance >= 10)
     {
@@ -69,10 +80,13 @@ void loop(){
         }
 
         delay(DELAYVAL); // Pause before next pass through loop
-        }
-    while (distance <= 9)
-    {
+        break;
+    }
+    while (distance <= 9){
+        pixels1.show();
+        pixels2.show();
         pixels1.clear(); // Set all pixel colors to 'off'
         pixels2.clear(); // Set all pixel colors to 'off'
-        }
+        break;
+    }
 }
