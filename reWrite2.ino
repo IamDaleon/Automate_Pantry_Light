@@ -8,24 +8,14 @@
 
 
 #include <Adafruit_NeoPixel.h>
-#ifdef __AVR__
- #include <avr/power.h> // Required for 16 MHz Adafruit Trinket
+#include <avr/power.h> // Required for 16 MHz Adafruit Trinket
 
  /* Definers */
-//
-//
-// Ultrasonic Sensor HC-SR04
-//
-const int trigPin = 2;
-const int echoPin = 4;
-
- // 
  // NeoPixels
- //
-#define STRIP1        11 
-#define STRIP2        12 
-// How many NeoPixels are attached to the Arduino?
-#define NUMPIXELS 60 // Per Strip
+#define STRIP1 = 11, STRIP2 = 12, NUMPIXELS= 60 // Strip light & NeoPixels defined
+
+// Ultrasonic Sensor HC-SR04
+const int trigPin = 2, echoPin = 4;
 
 Adafruit_NeoPixel pixels1(NUMPIXELS, STRIP1, NEO_GRB + NEO_KHZ800);
 Adafruit_NeoPixel pixels2(NUMPIXELS, STRIP2, NEO_GRB + NEO_KHZ800);
@@ -59,25 +49,30 @@ void setup() {
 }
 
 void loop(){
-    do
+
+    while (distance >= 10)
     {
-    pixels1.clear(); // Set all pixel colors to 'off'
-    pixels2.clear(); // Set all pixel colors to 'off'
+        pixels1.clear(); // Set all pixel colors to 'off'
+        pixels2.clear(); // Set all pixel colors to 'off'
 
-    // The first NeoPixel in a strand is #0, second is 1, all the way up
-    // to the count of pixels minus one.
-    for(int i=0; i<NUMPIXELS; i++) { // For each pixel...
+        // The first NeoPixel in a strand is #0, second is 1, all the way up
+        // to the count of pixels minus one.
+        for(int i=0; i<NUMPIXELS; i++) { // For each pixel...
 
-    // pixels.Color() takes RGB values, from 0,0,0 up to 255,255,255
-    // Here we're using a moderately bright bluish green color:
-    pixels1.setPixelColor(i, pixels1.Color(240, 237, 225));
-    pixels2.setPixelColor(i, pixels2.Color(240, 237, 225));
+        // pixels.Color() takes RGB values, from 0,0,0 up to 255,255,255
+        // Here we're using a moderately bright bluish green color:
+        pixels1.setPixelColor(i, pixels1.Color(240, 237, 225));
+        pixels2.setPixelColor(i, pixels2.Color(240, 237, 225));
 
-    pixels1.show();   // Send the updated pixel colors to the hardware.
-    pixels2.show();   // Send the updated pixel colors to the hardware.
-    }
+        pixels1.show();   // Send the updated pixel colors to the hardware.
+        pixels2.show();   // Send the updated pixel colors to the hardware.
+        }
 
-    delay(DELAYVAL); // Pause before next pass through loop
-
-    } while (/* condition */ distance >= 10); 
+        delay(DELAYVAL); // Pause before next pass through loop
+        }
+    while (distance <= 9)
+    {
+        pixels1.clear(); // Set all pixel colors to 'off'
+        pixels2.clear(); // Set all pixel colors to 'off'
+        }
 }

@@ -8,25 +8,19 @@
 
 
 #include <Adafruit_NeoPixel.h>
-#ifdef __AVR__
- #include <avr/power.h> // Required for 16 MHz Adafruit Trinket
+// #ifdef __AVR__
+//  #include <avr/power.h> // Required for 16 MHz Adafruit Trinket
+// #endif
+// Which pin on the Arduino is connected to the NeoPixels?
+#define NUMPIXELS = 60, STRIP1 = 11, STRIP2 = 12 // Strip light & NeoPixels defined
 
- /* Definers */
-//
-//
-// Ultrasonic Sensor HC-SR04
-//
-const int trigPin = 2;
-const int echoPin = 4;
+// defines pins numbers for the Ultrasonic Sensor HC-SR04
+const int trigPin = 2, echoPin = 4;
 
- // 
- // NeoPixels
- //
-#define STRIP1        11 
-#define STRIP2        12 
-// How many NeoPixels are attached to the Arduino?
-#define NUMPIXELS 60 // Per Strip
-
+// When setting up the NeoPixel library, we tell it how many pixels,
+// and which pin to use to send signals. Note that for older NeoPixel
+// strips you might need to change the third parameter -- see the
+// strandtest example for more information on possible values.
 Adafruit_NeoPixel pixels1(NUMPIXELS, STRIP1, NEO_GRB + NEO_KHZ800);
 Adafruit_NeoPixel pixels2(NUMPIXELS, STRIP2, NEO_GRB + NEO_KHZ800);
 
@@ -35,13 +29,15 @@ Adafruit_NeoPixel pixels2(NUMPIXELS, STRIP2, NEO_GRB + NEO_KHZ800);
 // defines variables
 long duration;
 int distance;
-
 void setup() {
   pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
   pinMode(echoPin, INPUT); // Sets the echoPin as an Input
   Serial.begin(9600); // Starts the serial communication
+
   pixels1.begin(); // INITIALIZE NeoPixel strip object (REQUIRED)
   pixels2.begin(); // INITIALIZE NeoPixel strip object (REQUIRED)
+}
+void loop() {
   // Clears the trigPin
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
@@ -56,17 +52,13 @@ void setup() {
   // Prints the distance on the Serial Monitor
   Serial.print("Distance: ");
   Serial.println(distance);
-}
-
-void loop(){
-    do
-    {
+  if(distance >= 8){
     pixels1.clear(); // Set all pixel colors to 'off'
     pixels2.clear(); // Set all pixel colors to 'off'
 
-    // The first NeoPixel in a strand is #0, second is 1, all the way up
-    // to the count of pixels minus one.
-    for(int i=0; i<NUMPIXELS; i++) { // For each pixel...
+  // The first NeoPixel in a strand is #0, second is 1, all the way up
+  // to the count of pixels minus one.
+  for(int i=0; i<NUMPIXELS; i++) { // For each pixel...
 
     // pixels.Color() takes RGB values, from 0,0,0 up to 255,255,255
     // Here we're using a moderately bright bluish green color:
@@ -78,6 +70,10 @@ void loop(){
     }
 
     delay(DELAYVAL); // Pause before next pass through loop
-
-    } while (/* condition */ distance >= 10); 
+  }else if(distance <= 7){
+    pixels1.show();
+    pixels2.show();
+    pixels1.clear(); // Set all pixel colors to 'off'
+    pixels2.clear(); // Set all pixel colors to 'off'
+  }
 }
