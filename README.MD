@@ -31,7 +31,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="http://www.logobook.com/wp-content/uploads/2017/02/Avidia_Banking_logo.svg" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Simple Automate Pantry Light</h3>
@@ -94,6 +94,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 ### Built With
 
 [![Arduino][Arduino.com]][Arduino-url]
+![C++][C++]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -166,9 +167,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-iamDaleon - [@iamDaleon](https://twitter.com/iamDaleon) - email@email_client.com
+iamDaleon - [@iamDaleon](https://twitter.com/iamDaleon)
 
-Project Link: [https://github.com/iamDaleon/Automate_Pantry_Light](https://github.com/iamDaleon/Automate_Pantry_Light)
+Project Link: [Automate Pantry-Light](https://github.com/iamDaleon/Automate_Pantry_Light)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -216,5 +217,7 @@ Project Link: [https://github.com/iamDaleon/Automate_Pantry_Light](https://githu
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
-[Arduino-url]: https://arduino.com 
-[Arduino.com]: https://core-electronics.com.au/media/kbase/arduino_logo_sml.png 
+[Arduino-url]: https://arduino.cc 
+[Arduino.com]: https://brandslogos.com/wp-content/uploads/images/arduino-logo-1.png
+[C++]: https://brandslogos.com/wp-content/uploads/images/c-logo.png 
+[Cplusplus]: https://en.wikipedia.org/wiki/C++
