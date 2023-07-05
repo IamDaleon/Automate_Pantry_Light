@@ -31,7 +31,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="http://www.logobook.com/wp-content/uploads/2017/02/Avidia_Banking_logo.svg" alt="Logo" width="80" height="80">
+    <img src="https://bcassetcdn.com/public/blog/wp-content/uploads/2022/05/06231454/zeus-by-nick-molokovich-dribbble-2.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Simple Automate Pantry Light</h3>
