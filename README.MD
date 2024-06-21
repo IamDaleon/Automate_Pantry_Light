@@ -10,7 +10,7 @@
 <h3 align="center">Simple Automate Pantry Light</h3>
 
   <p align="center">
-    Grabbed an Arduino Uno attached an Ultrasonic HC-SR04 Module, with (2) Adafruit NeoPixel Strips
+    Utilizes an Arduino Uno attached an Ultrasonic HC-SR04 Module, with (2) Inland WS8218B Individually Addressable LED Strip
     <br />
     <a href="https://github.com/iamDaleon/Automate_Pantry_Light"><strong>Explore the docs »</strong></a>
     <br />
@@ -45,7 +45,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Upon moving into my home and realizing that the pantry has no light. As a programmer, I leaped into action and created and automated light, so you wouldn't have to remember if the pantry light has been left on or not.  
+Upon moving into my new home, I quickly realized that there was no light in the pantry. Every time I needed something, I found myself fumbling around in the dark, which was both inconvenient and frustrating. As a programmer, I saw this as an opportunity to apply my skills to solve a real-world problem. I leaped into action and designed an automated lighting system specifically for the pantry.
+
+I installed an ultrasonic sensor that detects the distance to the pantry door. When the distance exceeds my set value, the sensor triggers the LED strips to turn on. This way, you never have to fumble for a switch or worry about forgetting to turn the light off when you leave. I also included a timer that ensures the light turns off after a certain period of inactivity, conserving energy and providing peace of mind.
+
+Now, the pantry is always well-lit when needed, making it easier to find items and enhancing the overall functionality of the space. This small yet impactful project not only solved a daily annoyance but also highlighted the practical applications of programming in everyday life.
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -55,10 +59,10 @@ Upon moving into my home and realizing that the pantry has no light. As a progra
 
 <ul>
   <li>
-      ( 1 ) Ultrasonic HC-SR04 Module
+      ( 1 ) Inland HC-SR04 Blue Ultrasonic Module
   </li>
   <li>
-      ( 2 ) Adafruit NeoPixel LED Strips
+      ( 2 ) Inland WS8218B Individually Addressable LED Strip
   </li>
   <li>
       ( 1 ) Adruino Uno
@@ -91,7 +95,9 @@ git clone https://github.com/iamDaleon/Automate_Pantry_Light.git
 
 - [ Breadboard & test functionality ] Feature 1 - <strong>COMPLETED</strong>
 - [ Design and 3D Print a Case ] Feature 2 - <strong>IN PIPELINE</strong>
-- [ Redesign and continue the process ] Feature 3 - <strong>TBA</strong>
+- [ Add Photos of the device ] Feature 3 - <strong>TBA</strong>
+- [ Redesign and continue the process ] Feature 4 - <strong>TBA</strong>
+- [ Add the schematics, Instruction... etc ] Feature 5 - <strong>TBA</strong>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
