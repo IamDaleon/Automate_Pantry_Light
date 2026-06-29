@@ -25,6 +25,18 @@ cd Automate_Pantry_Light
 
 ## 4. Open the Firmware
 
+The project is organized as follows:
+
+```
+Automate_Pantry_Light/
+├── assets/               # Images (schematic, housing render)
+├── docs/                 # Documentation
+├── firmware/
+│   └── PantryLight.ino   # Single-file firmware
+├── LICENSE
+└── README.md
+```
+
 - Open `firmware/PantryLight.ino` in the Arduino IDE
 - Select your board: **Tools → Board → Arduino Uno**
 - Select the correct port: **Tools → Port → COMx (or /dev/ttyACMx)**

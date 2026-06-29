@@ -1,79 +1,123 @@
-# PantryLight
+<a name="readme-top"></a>
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/github_username/repo_name">
+    <img src="https://bcassetcdn.com/public/blog/wp-content/uploads/2022/05/06231454/zeus-by-nick-molokovich-dribbble-2.png" alt="Logo" width="200" height="200">
+  </a>
 
 **An automatic pantry light that turns on when you open the door and off when you close it.**
 
 [![Arduino](https://img.shields.io/badge/Arduino-Uno-00979D?logo=arduino&logoColor=white)](https://www.arduino.cc/)
 [![NeoPixel](https://img.shields.io/badge/NeoPixel-WS2818B-00C853)](https://www.adafruit.com/category/168)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+</div>
+<br />
 
----
 
-## Overview
 
-No light in the pantry? This project solves that with an **Arduino Uno**, an **HC-SR04 ultrasonic sensor**, and **two WS2818B addressable LED strips**.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Parts List</a></li>
+        <li><a href="#prerequisites">Built With</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#schematic">Schematic</a></li>
+    <li><a href="#housing">3D Printed Housing</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-- Door opens → lights turn on
-- Door closes → lights turn off after a short delay
-- No switches, no wiring into the house — fully self-contained
 
-## Quick Start
 
-```bash
-git clone https://github.com/iamDaleon/Automate_Pantry_Light.git
-cd Automate_Pantry_Light
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+Upon moving into my new home, I quickly realized that there was no light in the pantry. Every time I needed something, I found myself fumbling around in the dark, which was both inconvenient and frustrating. As a programmer, I saw this as an opportunity to apply my skills to solve a real-world problem. I leaped into action and designed an automated lighting system specifically for the pantry.
+
+I installed an ultrasonic sensor that detects the distance to the pantry door. When the distance exceeds my set value, the sensor triggers the LED strips to turn on. This way, you never have to fumble for a switch or worry about forgetting to turn the light off when you leave. I also included a timer that ensures the light turns off after a certain period of inactivity, conserving energy and providing peace of mind.
+
+Now, the pantry is always well-lit when needed, making it easier to find items and enhancing the overall functionality of the space. This small yet impactful project not only solved a daily annoyance but also highlighted the practical applications of programming in everyday life.
+
+## Schematic
+
+![Wiring Schematic](assets/schema.png)
+
+## Housing
+
+A custom 3D-printed enclosure is being designed to house the Arduino Uno, sensor, and wiring neatly.
+
+![3D Housing Render](assets/3D_Housing.png)
+
+Stay tuned — the STL files will be added once finalized.
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+
+### Parts list 
+
+<ul>
+  <li>
+      ( 1 ) Inland HC-SR04 Blue Ultrasonic Module
+  </li>
+  <li>
+      ( 2 ) Inland WS8218B Individually Addressable LED Strip
+  </li>
+  <li>
+      ( 1 ) Adruino Uno
+  </li>
+</ul>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Built With
+
+<img src="https://brandslogos.com/wp-content/uploads/images/arduino-logo-1.png" alt="Arduino" width="100" height="100" />
+<img src="https://brandslogos.com/wp-content/uploads/images/c-logo.png" alt="C++" width="100" height="100" />
+
+
+### Installation
+
+1. Get the Arduino software at [Arduino.com](https://Arduino.com)
+2. Clone the repo
+``` 
+git clone https://github.com/iamDaleon/Automate_Pantry_Light.git 
+
 ```
+3. Install the Automated_Pantry_Light onto the Arduino
+4. Wire up cables to the correct ports
+5. Enjoy the project.
 
-1. Wire the hardware — see the [wiring diagram](docs/wiring.md)
-2. Install the [Adafruit NeoPixel](https://github.com/adafruit/Adafruit_NeoPixel) library
-3. Open `firmware/PantryLight.ino` in the Arduino IDE
-4. Upload to your Arduino Uno
 
-Full setup guide: [docs/installation.md](docs/installation.md)
-
-## Hardware
-
-| Component | Qty |
-|-----------|-----|
-| Arduino Uno | 1 |
-| HC-SR04 Ultrasonic Sensor | 1 |
-| WS2818B LED Strip (60 LEDs) | 2 |
-| 5V Power Supply (5A+) | 1 |
-
-Pin mapping and specs: [docs/hardware.md](docs/hardware.md)
-
-## Features
-
-- **Hands-free** — ultrasonic sensor detects the door position
-- **Energy efficient** — auto-off timer (configurable, default 20s)
-- **Adjustable** — change brightness, color, distance threshold via firmware
-- **Dual strips** — 120 LEDs total for even illumination
-
-## Customization
-
-See [docs/usage.md](docs/usage.md) for:
-- Changing LED color (RGB values)
-- Adjusting brightness (0–255)
-- Setting distance thresholds
-- Modifying the auto-off delay
-
-## Troubleshooting
-
-LEDs not lighting? Sensor reading weird values? Check [docs/troubleshooting.md](docs/troubleshooting.md).
-
+<!-- ROADMAP -->
 ## Roadmap
 
-- [x] Breadboard prototype
-- [ ] Design and 3D print a case
-- [ ] Add photos of the installed device
-- [ ] Add wiring schematic
-- [ ] Continuous refinements
+- [ Breadboard & test functionality ] Feature 1 - <strong>COMPLETED</strong>
+- [ Design and 3D Print a Case ] Feature 2 - <strong>IN PIPELINE</strong> — see the [Housing render](#housing)
+- [ Add Photos of the device ] Feature 3 - <strong>TBA</strong>
+- [ Redesign and continue the process ] Feature 4 - <strong>TBA</strong>
+- [ Add the schematics, Instruction... etc ] Feature 5 - <strong>COMPLETED</strong>
 
-## License
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Distributed under the MIT License. See [LICENSE](LICENSE).
 
+<!-- CONTACT -->
 ## Contact
 
-**Daleon L.** — [@iamDaleon](https://twitter.com/iamDaleon)
+iamDaleon - [@iamDaleon](https://twitter.com/iamDaleon)
 
-Project: [github.com/iamDaleon/Automate_Pantry_Light](https://github.com/iamDaleon/Automate_Pantry_Light)
+Project Link: [Automate Pantry-Light](https://github.com/iamDaleon/Automate_Pantry_Light)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>

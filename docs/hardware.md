@@ -30,3 +30,11 @@
 - **Distance Threshold (OFF):** ≤ 7 cm
 - **Timeout:** 20 seconds after last trigger
 - **Baud Rate:** 9600 (serial debug output)
+
+## Firmware
+
+The firmware is consolidated into a single file: [`firmware/PantryLight.ino`](../firmware/PantryLight.ino). It uses the `setPixelColors()` helper to drive both LED strips from one code path.
+
+## 3D Printed Case
+
+A custom 3D-printable enclosure is in development. See the [3D Housing render](../README.md#housing).

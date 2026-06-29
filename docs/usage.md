@@ -7,9 +7,11 @@ Once wired and programmed, the system works automatically:
 
 ## Customization
 
+The firmware lives in a single file — [`firmware/PantryLight.ino`](../firmware/PantryLight.ino). Both LED strips share the same color via the `setPixelColors()` helper function.
+
 ### Change LED Color
 
-Edit `pixels1.Color(240, 237, 225)` in `firmware/PantryLight.ino`. Values are RGB (0–255 each):
+Edit the `pixels1.Color(240, 237, 225)` call in `loop()`. Values are RGB (0–255 each):
 
 | Color | R | G | B |
 |-------|---|---|---|
