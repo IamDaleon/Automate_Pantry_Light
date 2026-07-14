@@ -33,7 +33,7 @@
 
 ## Firmware
 
-The firmware is consolidated into a single file: [`firmware/PantryLight.ino`](../firmware/PantryLight.ino). It uses the `setPixelColors()` helper to drive both LED strips from one code path.
+The firmware is consolidated into a single file: [`firmware/PantryLight/PantryLight.ino`](../firmware/PantryLight/PantryLight.ino). It uses the `setPixelColors()` helper to drive both LED strips from one code path.
 
 ## 3D Printed Case
 

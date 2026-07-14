@@ -7,7 +7,7 @@ Once wired and programmed, the system works automatically:
 
 ## Customization
 
-The firmware lives in a single file — [`firmware/PantryLight.ino`](../firmware/PantryLight.ino). Both LED strips share the same color via the `setPixelColors()` helper function.
+The firmware lives in a single file — [`firmware/PantryLight/PantryLight.ino`](../firmware/PantryLight/PantryLight.ino). Both LED strips share the same color via the `setPixelColors()` helper function.
 
 ### Change LED Color
 
