@@ -11,5 +11,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: arduino/arduino-lint-action@v3
         with:
+          path: firmware/PantryLight
           project-type: sketch
           compliance: specification
